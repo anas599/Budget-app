@@ -1,0 +1,2 @@
+class GroupEntitiesController < ApplicationController
+end
