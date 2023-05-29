@@ -1,0 +1,14 @@
+<%if user_signed_in?%>
+  <h2>Budget App</h2>
+  <%# render entity path %>
+  <% @groups.each do |g| %>
+    <%= render g %>
+    <p>
+      <%# <%= link_to "Show this group", group %> %>
+    </p>
+  <% end %>
+  <%= link_to "New group", new_group_path %>
+<%else%>
+  <%= link_to "Log in", '/users/sign_in' %><br />
+  <%= link_to "Sign up", '/users/sign_up' %><br />
+<%end%>

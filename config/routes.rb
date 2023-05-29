@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :groups
   resources :entities
   resources :users
+  resources :splash
+
   # Defines the root path route ("/")
-  root "users#splash"
+  root "splash#show"
 end

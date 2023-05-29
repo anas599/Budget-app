@@ -3,15 +3,17 @@
     <strong>Name:</strong>
     <%= entity.name %>
   </p>
-
   <p>
     <strong>Amount:</strong>
     <%= entity.amount %>
   </p>
-
   <p>
     <strong>User:</strong>
     <%= entity.user_id %>
   </p>
-
+  <p>
+    <strong>group:</strong>
+    <%g=Group.find(entity.group_id)%>
+    <%= g.name %>
+  </p>
 </div>

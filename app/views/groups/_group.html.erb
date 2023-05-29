@@ -1,17 +1,9 @@
 <div id="<%= dom_id group %>">
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
-
-  <p>
-    <strong>Entity:</strong>
-    <%= group.entity_id %>
-  </p>
-
+  <% catval = Entity.where(user_id: current_user).group(:group_id).select('group_id, SUM(amount) as total_amount') %>
+  <% catval.each do |entity| %>
+    <img src="<%= asset_path(Group.find(entity.group_id).icon) %>" alt="Icon">
+    <p> Category: <%=Group.find(entity.group_id).name%>
+    </p>
+    <p>Total Transactions: <%= entity.total_amount %></p>
+  <% end %>
 </div>
