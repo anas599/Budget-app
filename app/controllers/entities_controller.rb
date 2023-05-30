@@ -25,7 +25,7 @@ class EntitiesController < ApplicationController
       if @entity.save
         EntityGroup.new(group_id: @entity.group_id, entity_id: @entity.id).save
 
-        format.html { redirect_to entity_url(@entity), notice: 'Entity was successfully created.' }
+format.html { redirect_to group_url(@entity.group_id), notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
