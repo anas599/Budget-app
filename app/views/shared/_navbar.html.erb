@@ -1,0 +1,40 @@
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="/">
+      <i class="bi bi-arrow-left-circle"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav m-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/groups">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/entities">Transactions</a>
+        </li>
+        <li class="nav-item dropdown m-0">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu m-0">
+            <li><a class=" m-0 dropdown-item" href="#">Action</a></li>
+            <li><a class=" m-0 dropdown-item" href="#">Another action</a></li>
+            <li><hr class=" m-0 dropdown-divider"></li>
+            <li><a class=" m-0 dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <% if user_signed_in? %>
+          <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger"%></li>
+        <% else %>
+          <li ><%= link_to "Sign In", new_user_session_path, class:"nav-link btn btn-outline-warning mx-3"%></li>
+          <li><%= link_to "SignUp", new_user_registration_path , class:"nav-link btn btn-outline-info mx-3"%></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

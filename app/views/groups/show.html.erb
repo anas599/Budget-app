@@ -1,0 +1,21 @@
+<% path = request.path.split("/") %>
+<%group_num = path[-1]%>
+<% catval2 = Entity.where(user_id: current_user,group_id: group_num).select(' SUM(amount) as total_amount') %>
+<% catval = Entity.where(user_id: current_user,group_id: group_num).order(created_at: :desc) %>
+<% catval2.each do |x| %>
+  <p class="p mt-3"> Total Transactions:- <%= x.total_amount %>$</p>
+  <p class="p mt-3"><%= link_to Group.find(group_num).name%></p>
+<% end %>
+<% catval.each do |entity| %>
+  <div class="cat-div shadow-sm">
+    <p class="p1 mt-3"><%= entity.name %></p>
+    <p class="p1 mt-3"><%= entity.amount %>$</p>
+  </div>
+<% end %>
+<div>
+  <%= link_to "New entity", new_entity_path,class:"btn btn-outline-primary bi-plus-circle"
+ %>
+  <%= link_to "Edit this group", edit_group_path(@group) %> |
+  <%= link_to "Back to groups", groups_path %>
+  <%= button_to "Destroy this group", @group, method: :delete %>
+</div>
