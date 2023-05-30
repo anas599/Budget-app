@@ -3,13 +3,17 @@
   <% catval = Entity.where(user_id: current_user).group(:group_id).select('group_id, SUM(amount) as total_amount') %>
   <% catval.each do |entity| %>
     <div class="cat-div shadow-sm">
-      <i class="material-icons just-the-i icon-b shadow"><%=Group.find(entity.group_id).icon%></i>
+      <i class="material-icons just-the-i icon-b shadow outlined"><%=Group.find(entity.group_id).icon%></i>
       <p class="p"><%= link_to Group.find(entity.group_id).name, group_path(Group.find(entity.group_id)) %></p>
       <p class="p"> <%= entity.total_amount %>$</p>
     </div>
   <% end %>
-  <%= link_to "Add a new category ", new_group_path,class:"btn btn-outline-primary bi-plus-circle" %>
+  <%= link_to "Add category ", new_group_path,class:"btn btn-primary bg-gradient bi-plus-circle" %>
 <%else%>
-  <%= link_to "Log in", '/users/sign_in' %><br />
-  <%= link_to "Sign up", '/users/sign_up' %><br />
+  <section class="d-flex flex-column justify-content-between">
+    <i class="material-icons just-the-i icon-b shadow outlined text-center mb-3">paid</i>
+    <h1 class="text-center my-3">Budget App</h1>
+    <%= link_to "Log in", '/users/sign_in', class:"btn btn-primary my-2 w-100 p-3  " %><br />
+    <%= link_to "Sign up", '/users/sign_up', class:"btn btn-secondary my-2 w-100 p-3" %><br />
+  </section>
 <%end%>

@@ -3,7 +3,7 @@ class EntitiesController < ApplicationController
 
   # GET /entities or /entities.json
   def index
-    @entities = Entity.all
+    @entities = Entity.where(user_id: current_user.id)
   end
 
   # GET /entities/1 or /entities/1.json

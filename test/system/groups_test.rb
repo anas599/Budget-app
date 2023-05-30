@@ -12,7 +12,7 @@ class GroupsTest < ApplicationSystemTestCase
 
   test 'should create group' do
     visit groups_url
-    click_on 'Add a new category'
+    click_on 'Add category'
 
     fill_in 'Entity', with: @group.entity_id
     fill_in 'Icon', with: @group.icon
@@ -38,7 +38,7 @@ class GroupsTest < ApplicationSystemTestCase
 
   test 'should destroy Group' do
     visit group_url(@group)
-    click_on 'Destroy this group', match: :first
+    click_on 'Remove category', match: :first
 
     assert_text 'Group was successfully destroyed'
   end
