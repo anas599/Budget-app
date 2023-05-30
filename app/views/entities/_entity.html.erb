@@ -5,14 +5,10 @@
   </p>
   <p>
     <strong>Amount:</strong>
-    <%= entity.amount %>
+    $<%= entity.amount %>
   </p>
   <p>
-    <strong>User:</strong>
-    <%= entity.user_id %>
-  </p>
-  <p>
-    <strong>group:</strong>
+    <strong>Category:</strong>
     <%g=Group.find(entity.group_id)%>
     <%= g.name %>
   </p>
