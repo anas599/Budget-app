@@ -22,8 +22,7 @@
     <%= form.number_field :amount %>
   </div>
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id, value:current_user.id %>
+    <%= form.hidden_field :user_id, value:current_user.id %>
   </div>
   <div>
     <%= form.submit %>

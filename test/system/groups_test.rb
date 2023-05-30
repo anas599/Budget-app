@@ -12,7 +12,7 @@ class GroupsTest < ApplicationSystemTestCase
 
   test 'should create group' do
     visit groups_url
-    click_on 'New group'
+    click_on 'Add a new category'
 
     fill_in 'Entity', with: @group.entity_id
     fill_in 'Icon', with: @group.icon

@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     flash[:notice] = "Welcome back, #{resource.name}!"
-    entities_path
+    groups_path
   end
 end
