@@ -1,6 +1,6 @@
 databases:
-  - name: mysitebudget
-    databaseName: mysitebudget
+  - name: mysite
+    databaseName: mysite
     user: mysite
 
 services:
