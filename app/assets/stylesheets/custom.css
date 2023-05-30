@@ -55,7 +55,7 @@ i.just-the-i {
 }
 
 .p {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-top: auto;
 }
 
@@ -68,4 +68,7 @@ i.just-the-i {
   margin-top: auto;
   border: #f7f7f7 solid 1.5px;
   border-radius: 1rem;
+}
+.bgflex{
+    background-color: #fff;
 }
