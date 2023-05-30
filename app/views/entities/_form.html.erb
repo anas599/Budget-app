@@ -10,7 +10,7 @@
     </div>
   <% end %>
   <div class="my-4">
-    <%= form.collection_select :group_id, Group.all, :id, :name, {}, { class: "form-select" } %>
+    <%= form.collection_select :group_id, Group.where(user_id: current_user), :id, :name, {}, { class: "form-select" } %>
   </div>
   <div class="my-4">
     <%= form.text_field :name, class: "form-control", placeholder:"Name" %>
