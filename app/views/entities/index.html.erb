@@ -1,14 +1,31 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Entities</h1>
-
+<h1>All transactions</h1>
 <div id="entities">
-  <% @entities.each do |entity| %>
-    <%= render entity %>
-    <p>
-      <%= link_to "Show this entity", entity %>
-    </p>
-  <% end %>
+  <table class="table  table-hover glass-bg  table-bordered shadow">
+    <thead>
+      <tr>
+        <th class="text-center">Transaction</th>
+        <th class="text-center">Amount</th>
+        <th class="text-center">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @entities.each do |entity| %>
+        <tr>
+          <td class="text-center">
+            <%= link_to entity.name, entity %>
+          </td>
+          <td class="text-center">
+            $<%= entity.amount %>
+          </td>
+          <td class="text-center">
+            <% g = Group.find(entity.group_id) %>
+            <%= g.name %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-<%= link_to "New entity", new_entity_path %>
+<%= link_to "Add transaction", new_entity_path, class:"btn btn-primary bi-plus-circle
+" %>
