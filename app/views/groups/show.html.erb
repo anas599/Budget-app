@@ -7,13 +7,14 @@
   <p class="p mt-3 text-center"><%= link_to Group.find(group_num).name%></p>
 <% end %>
 <% catval.each do |entity| %>
-  <div class="d-flex flex-column shadow-sm bgflex">
+  <div class="d-flex flex-column shadow-sm bgflex my-4">
     <div class="cat-div ">
       <p class="p1 mt-3"><%= entity.name %></p>
       <p class="p1 mt-3"><%= entity.amount %>$</p>
     </div>
     <div>
-      <p class="mt-3"><%= entity.created_at %></p>
+      <hr>
+      <p class="mt-3 text-center"><%= entity.created_at %></p>
     </div>
   </div>
 <% end %>

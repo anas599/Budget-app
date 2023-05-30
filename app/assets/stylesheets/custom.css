@@ -17,7 +17,7 @@ img {
 .material-icons.orange600 {
   color: #fb8c00;
 }
-
+/* stylelint-disable csstree/validator */
 .i-wrapper {
   font-size: 40px;
   background: -moz-linear-gradient(top, #e72c83 0%, #a742c6 100%);
@@ -27,7 +27,6 @@ img {
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
 
 i.just-the-i {
@@ -39,15 +38,11 @@ i.just-the-i {
   -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-
 }
-
+/* stylelint-enable csstree/validator */
 .cat-div {
   background-color: #fff;
   padding: 5px;
-  margin: 5px;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -69,6 +64,7 @@ i.just-the-i {
   border: #f7f7f7 solid 1.5px;
   border-radius: 1rem;
 }
-.bgflex{
-    background-color: #fff;
+
+.bgflex {
+  background-color: #fff;
 }
