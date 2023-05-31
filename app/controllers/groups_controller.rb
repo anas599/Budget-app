@@ -39,6 +39,12 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+    @entity_group = EntityGroup.find_by(group_id: @group.id) # Use find_by instead of where to fetch a single record
+    @entity_group.destroy if @entity_group.present? # Only destroy if the record exists
+
+    @entities = Entity.where(group_id: @group.id)
+    @entities.destroy_all if @entities.present? # Only destroy if records exist
+
     @group.destroy
 
     respond_to do |format|
