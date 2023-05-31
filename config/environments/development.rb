@@ -45,8 +45,8 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.active_support.deprecation = :log
 
   # add gem letter opener
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
+  # config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.perform_deliveries = true
   # add gem letter opener
 
   # Raise exceptions for disallowed deprecations.
