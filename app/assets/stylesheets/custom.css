@@ -1,5 +1,11 @@
+:root {
+  --primary-color: #5fb523;
+  --secondary-color: #3778c2;
+  --third-color: #434b54;
+}
 body {
   background-color: #f5f5f5;
+  color: var(--third-color);
 }
 
 img {
@@ -67,4 +73,22 @@ i.just-the-i {
 
 .bgflex {
   background-color: #fff;
+}
+.color1{
+  background-color: var(--primary-color)
+}
+.color2{
+background-color: var(--secondary-color)
+}
+.color3{
+background-color: var(--third-color)
+}
+.text-color1{
+  color: var(--primary-color)
+}
+.text-color2{
+color: var(--secondary-color)
+}
+.text-color3{
+color: var(--third-color)
 }
