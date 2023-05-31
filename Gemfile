@@ -44,10 +44,10 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
+gem 'cancancan'
 gem 'devise'
 gem 'material_icons'
 gem 'rubocop', '>= 1.0', '< 2.0'
-gem 'cancancan'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -59,6 +59,7 @@ gem 'letter_opener', group: :development
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
