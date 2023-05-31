@@ -174,6 +174,8 @@ Feel free to check the [issues page](https://github.com/anas599/Budget-App.git/i
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 > I would like to thank Microverse for this project based learning
+> <br>
+> I would like to credit to the Original design idea by [Gregoi Revella](https://www.behance.net/gregoirevella) for the [Design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
