@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   # # GET /users or /users.json
-  # def index
-  #   @users = User.all
-  # end
+  def index
+    @users = User.where(id: current_user.id)
+  end
 
   # # GET /users/1 or /users/1.json
   # def show; end
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 
   # # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = User.where(id: current_user.id)
   end
 
   # # Only allow a list of trusted parameters through.
@@ -68,6 +68,6 @@ class UsersController < ApplicationController
   #   params.require(:user).permit(:name, :email, :password)
   # end
   def show
-    @user = User.find(params[:id])
+    @user = User.where(id: current_user.id)
   end
 end
