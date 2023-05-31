@@ -1,7 +1,12 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-  <div class="container-fluid">
-    <a class="navbar-brand " href="/">
-      <i class="bi bi-arrow-left-circle"></i>
+<% path = request.path.split("/") %>
+<nav class="navbar navbar-expand-lg navbar-dark color2 mb-5 ">
+  <div class="container-fluid flex-row-reverse">
+    <a class="navbar-brand" href="/">
+      <% if path.length == 0 %>
+        <i class="material-icons just-the-i icon-b shadow outlined text-center">paid</i>
+      <% else %>
+        <i class="bi bi-arrow-left-circle"></i>
+      <% end %>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -29,7 +34,7 @@
           </ul>
         </li>
         <% if user_signed_in? %>
-          <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger"%></li>
+          <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"btn btn-danger bg-gradient"%></li>
         <% else %>
           <li ><%= link_to "Sign In", new_user_session_path, class:"nav-link btn btn-outline-warning mx-3"%></li>
           <li><%= link_to "SignUp", new_user_registration_path , class:"nav-link btn btn-outline-info mx-3"%></li>

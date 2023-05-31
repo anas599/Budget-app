@@ -1,6 +1,6 @@
-<%= form_with(model: group) do |form| %>
+<%= form_with(model: group, class: "needs-validation") do |form| %>
   <% if group.errors.any? %>
-    <div style="color: red">
+    <div class="alert alert-danger">
       <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
       <ul>
         <% group.errors.each do |error| %>
@@ -9,18 +9,22 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mb-3">
+    <%= form.text_field :name, class: "form-control my-5", placeholder:"Name" %>
+  </div>
+  <h4 class="text-center my-4">Choose an icon:</h4>
+  <div class="btn-group d-flex flex-wrap">
+    <%= form.collection_radio_buttons :icon, [['restaurant_menu', 'Food'], ['checkroom', 'Clothes'], ['flight', 'Travel'], ['house', 'Rent'], ['bolt', 'Electricity'], ['water_drop', 'Water bill'], ['wifi', 'Internet'], ['school', 'School'], ['shopping_cart', 'Shopping']], :first, :last do |b| %>
+      <label class="btn btn-light">
+        <%= b.radio_button(class: 'btn-check') %>
+        <i class="material-icons just-the-i icon-b shadow outlined"><%= b.value %></i>
+      </label>
+    <% end %>
   </div>
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
-  <div>
-    <%= form.hidden_field :user_id, value:current_user.id %>
-  </div>
-  <div>
-    <%= form.submit %>
+  <div class="text-center mt-3">
+    <%= form.submit "Save", class: "btn btn-primary my-3 p-2 w-100 color1 py-3" %>
   </div>
 <% end %>
