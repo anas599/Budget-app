@@ -47,6 +47,7 @@ gem 'bootsnap', require: false
 gem 'devise'
 gem 'material_icons'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'cancancan'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
