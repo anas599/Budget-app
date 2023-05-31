@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true, length: { maximum: 30 }
-  Roles = %i[admin default].freeze
+  ROLES = %i[admin default].freeze
 
   def is?(requested_role)
     role == requested_role.to_s
