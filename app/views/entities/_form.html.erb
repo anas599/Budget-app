@@ -1,0 +1,27 @@
+<%= form_with(model: entity, class: "needs-validation") do |form| %>
+  <% if entity.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+      <ul>
+        <% entity.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="my-4">
+    <%= form.collection_select :group_id, Group.where(user_id: current_user), :id, :name, {}, { class: "form-select" } %>
+  </div>
+  <div class="my-4">
+    <%= form.text_field :name, class: "form-control", placeholder:"Name" %>
+  </div>
+  <div class="my-4">
+    <%= form.number_field :amount, class: "form-control", placeholder:"Amount" %>
+  </div>
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+  <div class="text-center mt-3">
+    <%= form.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>

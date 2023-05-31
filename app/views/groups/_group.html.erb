@@ -1,0 +1,25 @@
+<div id="<%= dom_id group %>">
+  <% catval = Entity.where(user_id: current_user) %>
+  <% catval.each do |entity| %>
+    <p>amount:-<%= entity.amount %>
+      <p>name<%= entity.name %>
+        <p>groupid<%= entity.group_id %>
+        <% end %>
+        <p>
+          <strong>Icon:</strong>
+          <%= group.icon %>
+        </p>
+        <p>
+          <%# <strong>User:</strong> %>
+          <%# <%= group.user_id %> %>
+        </p>
+        <p>
+          <strong>Name of cat:</strong>
+          <%= group.name %>
+        </p>
+        <p>
+          <%# <%g=Group.%> %>
+          <%# <strong>Entity:</strong> %>
+          <%# <%= group.entity_id %> %>
+        </p>
+      </div>

@@ -1,0 +1,10 @@
+<div id="users">
+  <% @users.each do |user| %>
+    <% if can? :manage, user %>
+      <%= user.name %>
+    <% end %>
+    <p>
+      <%= link_to "Show this user", user %>
+    </p>
+  <% end %>
+</div>
