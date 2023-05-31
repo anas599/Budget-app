@@ -39,14 +39,14 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @entity_group = EntityGroup.find_by(group_id: @group.id) # Use find_by instead of where to fetch a single record
-    @entity_group.destroy if @entity_group.present? # Only destroy if the record exists
+@group.transaction do
+    @entity_group_ids = EntityGroup.where(group_id: @group.id).pluck(:id)
+    EntityGroup.where(id: @entity_group_ids).destroy_all
 
-    @entities = Entity.where(group_id: @group.id)
-    @entities.destroy_all if @entities.present? # Only destroy if records exist
+    Entity.where(group_id: @group.id).destroy_all
 
     @group.destroy
-
+end
     respond_to do |format|
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
