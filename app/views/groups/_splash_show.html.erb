@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
-  <h2 class="text-center mb-5 text-color3">Categories</h2>
+  <h2 class="text-center mb-3 text-color3">Categories</h2>
+  <hr>
   <% groups2 = Group.where(user_id: current_user) %>
   <% if groups2.present? %>
     <% groups2.each do |k| %>
