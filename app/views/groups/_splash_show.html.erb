@@ -4,7 +4,7 @@
   <% groups2 = Group.where(user_id: current_user) %>
   <% if groups2.present? %>
     <% groups2.each do |k| %>
-      <div class="cat-div shadow-sm">
+      <div class="cat-div shadow-sm mb-3">
         <i class="material-icons just-the-i icon-b shadow outlined"><%= k.icon %></i>
         <p class="p"><%= link_to k.name, group_path(k) %></p>
         <p class="p"><%= k.entities.where(user_id: current_user).sum(:amount) %>$</p>
