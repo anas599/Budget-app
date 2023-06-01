@@ -39,8 +39,14 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    @group.destroy
+@group.transaction do
+    @entity_group_ids = EntityGroup.where(group_id: @group.id).pluck(:id)
+    EntityGroup.where(id: @entity_group_ids).destroy_all
 
+    Entity.where(group_id: @group.id).destroy_all
+
+    @group.destroy
+end
     respond_to do |format|
       format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }

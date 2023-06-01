@@ -1,13 +1,14 @@
 <% path = request.path.split("/") %>
-<nav class="navbar navbar-expand-lg navbar-dark color2 mb-5 ">
+<nav class="navbar navbar-expand-lg navbar-dark color2 mb-3 ">
   <div class="container-fluid flex-row-reverse">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand m-0" href="/">
       <% if path.length == 0 %>
         <i class="material-icons just-the-i icon-b shadow outlined text-center">paid</i>
       <% else %>
         <i class="bi bi-arrow-left-circle"></i>
       <% end %>
     </a>
+    <h3 class="text-white">Budget App</h3>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,7 +23,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/entities">Transactions</a>
         </li>
-        <li class="nav-item dropdown m-0">
+        <%# <li class="nav-item dropdown m-0">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -32,7 +33,7 @@
             <li><hr class=" m-0 dropdown-divider"></li>
             <li><a class=" m-0 dropdown-item" href="#">Something else here</a></li>
           </ul>
-        </li>
+        </li> %>
         <% if user_signed_in? %>
           <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"btn btn-danger bg-gradient"%></li>
         <% else %>
