@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     @users = User.where(id: current_user.id)
   end
 
-
   # private
 
   def set_user
