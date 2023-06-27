@@ -1,3 +1,4 @@
+<% group_num = params[:group_id] %>
 <%= form_with(model: entity, class: "needs-validation") do |form| %>
   <% if entity.errors.any? %>
     <div class="alert alert-danger">
@@ -10,7 +11,7 @@
     </div>
   <% end %>
   <div class="my-4">
-    <%= form.collection_select :group_id, Group.where(user_id: current_user), :id, :name, {}, { class: "form-select" } %>
+    <%= form.collection_select :group_id, Group.where(user_id: current_user, id: group_num), :id, :name, {}, { class: "form-select" } %>
   </div>
   <div class="my-4">
     <%= form.text_field :name, class: "form-control", placeholder:"Name" %>
